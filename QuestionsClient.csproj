@@ -1,0 +1,381 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Config.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="Pages\Counter.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Styles\bulma-custom.scss" />
+    <None Remove="Styles\bulma\bulma.sass" />
+    <None Remove="Styles\bulma\CHANGELOG.md" />
+    <None Remove="Styles\bulma\css\bulma.css" />
+    <None Remove="Styles\bulma\css\bulma.css.map" />
+    <None Remove="Styles\bulma\css\bulma.min.css" />
+    <None Remove="Styles\bulma\LICENSE" />
+    <None Remove="Styles\bulma\README.md" />
+    <None Remove="Styles\bulma\sass\.DS_Store" />
+    <None Remove="Styles\bulma\sass\base\generic.sass" />
+    <None Remove="Styles\bulma\sass\base\helpers.sass" />
+    <None Remove="Styles\bulma\sass\base\minireset.sass" />
+    <None Remove="Styles\bulma\sass\base\_all.sass" />
+    <None Remove="Styles\bulma\sass\components\breadcrumb.sass" />
+    <None Remove="Styles\bulma\sass\components\card.sass" />
+    <None Remove="Styles\bulma\sass\components\dropdown.sass" />
+    <None Remove="Styles\bulma\sass\components\level.sass" />
+    <None Remove="Styles\bulma\sass\components\list.sass" />
+    <None Remove="Styles\bulma\sass\components\media.sass" />
+    <None Remove="Styles\bulma\sass\components\menu.sass" />
+    <None Remove="Styles\bulma\sass\components\message.sass" />
+    <None Remove="Styles\bulma\sass\components\modal.sass" />
+    <None Remove="Styles\bulma\sass\components\navbar.sass" />
+    <None Remove="Styles\bulma\sass\components\pagination.sass" />
+    <None Remove="Styles\bulma\sass\components\panel.sass" />
+    <None Remove="Styles\bulma\sass\components\tabs.sass" />
+    <None Remove="Styles\bulma\sass\components\_all.sass" />
+    <None Remove="Styles\bulma\sass\elements\box.sass" />
+    <None Remove="Styles\bulma\sass\elements\button.sass" />
+    <None Remove="Styles\bulma\sass\elements\container.sass" />
+    <None Remove="Styles\bulma\sass\elements\content.sass" />
+    <None Remove="Styles\bulma\sass\elements\form.sass" />
+    <None Remove="Styles\bulma\sass\elements\icon.sass" />
+    <None Remove="Styles\bulma\sass\elements\image.sass" />
+    <None Remove="Styles\bulma\sass\elements\notification.sass" />
+    <None Remove="Styles\bulma\sass\elements\other.sass" />
+    <None Remove="Styles\bulma\sass\elements\progress.sass" />
+    <None Remove="Styles\bulma\sass\elements\table.sass" />
+    <None Remove="Styles\bulma\sass\elements\tag.sass" />
+    <None Remove="Styles\bulma\sass\elements\title.sass" />
+    <None Remove="Styles\bulma\sass\elements\_all.sass" />
+    <None Remove="Styles\bulma\sass\form\checkbox-radio.sass" />
+    <None Remove="Styles\bulma\sass\form\file.sass" />
+    <None Remove="Styles\bulma\sass\form\input-textarea.sass" />
+    <None Remove="Styles\bulma\sass\form\select.sass" />
+    <None Remove="Styles\bulma\sass\form\shared.sass" />
+    <None Remove="Styles\bulma\sass\form\tools.sass" />
+    <None Remove="Styles\bulma\sass\form\_all.sass" />
+    <None Remove="Styles\bulma\sass\grid\columns.sass" />
+    <None Remove="Styles\bulma\sass\grid\tiles.sass" />
+    <None Remove="Styles\bulma\sass\grid\_all.sass" />
+    <None Remove="Styles\bulma\sass\layout\footer.sass" />
+    <None Remove="Styles\bulma\sass\layout\hero.sass" />
+    <None Remove="Styles\bulma\sass\layout\section.sass" />
+    <None Remove="Styles\bulma\sass\layout\_all.sass" />
+    <None Remove="Styles\bulma\sass\utilities\animations.sass" />
+    <None Remove="Styles\bulma\sass\utilities\controls.sass" />
+    <None Remove="Styles\bulma\sass\utilities\derived-variables.sass" />
+    <None Remove="Styles\bulma\sass\utilities\functions.sass" />
+    <None Remove="Styles\bulma\sass\utilities\initial-variables.sass" />
+    <None Remove="Styles\bulma\sass\utilities\mixins.sass" />
+    <None Remove="Styles\bulma\sass\utilities\_all.sass" />
+    <None Remove="Styles\site.scss" />
+    <None Remove="Styles\variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildWebCompiler" Version="1.12.394" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview9.19465.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview9.19465.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.0.0-preview9.19465.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview9.19465.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\About.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <Generator>MSBuild:RazorGenerateComponentDeclarationDesignTime</Generator>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Error.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Watch Remove="Pages\Error.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Error.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Styles\bulma-custom.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\bulma.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\CHANGELOG.md">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\css\bulma.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\css\bulma.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\css\bulma.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\LICENSE">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\README.md">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\.DS_Store">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\base\generic.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\base\helpers.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\base\minireset.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\base\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\breadcrumb.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\card.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\dropdown.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\level.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\list.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\media.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\menu.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\message.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\modal.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\navbar.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\pagination.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\panel.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\tabs.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\components\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\box.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\button.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\container.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\content.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\form.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\icon.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\image.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\notification.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\other.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\progress.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\table.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\tag.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\title.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\elements\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\checkbox-radio.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\file.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\input-textarea.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\select.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\shared.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\tools.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\form\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\grid\columns.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\grid\tiles.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\grid\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\layout\footer.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\layout\hero.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\layout\section.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\layout\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\animations.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\controls.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\derived-variables.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\functions.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\initial-variables.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\mixins.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\bulma\sass\utilities\_all.sass">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\site.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\variables.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+</Project>

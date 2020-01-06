@@ -1,0 +1,64 @@
+﻿
+<header id="navbar" class="header">
+    <nav class="navbar container"
+         role="navigation"
+         aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img width="40"
+                     height="60"
+                     src="/img/blazor.png"
+                     alt="Questions logo" />
+                <span class="beta-bump navbar-menu"> 
+                    Q&A Game 
+                </span>
+                @*<span style="color: #8867C8;">
+                    <i class="fas fa-heart"></i>
+                </span>
+                <img width="50"
+                     height="60"
+                     src="/img/Function.svg"
+                     alt="Azure Functions" />*@
+
+
+
+            </a>
+            <a id="hamburger"
+               role="button"
+               class="beta-bump navbar-burger burger @((ShowMenu ? "is-active" : ""))"
+               aria-label="menu"
+               aria-expanded="false"
+               data-target="navbarBasicExample"
+               @onclick="ToggleMenu">
+                <img src="/img/burger.svg"
+                     alt="toggle menu"
+                     width="60"
+                     height="60" />
+            </a>
+        </div>
+        <div class="beta-bump navbar-menu @(ShowMenu ? "is-active" : "")">
+            <div class="navbar-end">
+                <a class="navbar-item" href="/s/question">
+                    <span class="icon is-large navbar-icon">
+                        <i class="fas fa-lg fa-plus-circle"></i>
+                    </span>
+                    Questions
+                </a>  
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+@code {
+    private bool ShowMenu { get; set; } = true;
+    private bool isLoggedIn = false;
+
+    private void ToggleMenu()
+    {
+        this.ShowMenu = !this.ShowMenu;
+    }
+
+    
+}

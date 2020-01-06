@@ -1,0 +1,9 @@
+## Ignore temp files and build results
+
+[Dd]ebug/
+
+[Bb]in/
+
+[Oo]bj/
+
+[Oo]ut/

@@ -1,0 +1,444 @@
+﻿@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+@import "./bulma-custom.scss";
+
+.beta-bump {
+    margin-top: 10px;
+}
+
+html,
+body {
+    height: 100%;
+    text-rendering: auto;
+    text-size-adjust: 100%;
+    background-color: #f9fafc;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    color: #222c38;
+    font-size: 18px;
+}
+
+.input,
+.textarea {
+    outline: none;
+    padding: 0px 10px;
+    height: 3.5rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-color: #979797;
+    line-height: 1.5;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &.is-invalid {
+        border-width: 4px;
+        border-color: $danger;
+        -webkit-animation-name: shakeError;
+        animation-name: shakeError;
+        -webkit-animation-fill-mode: forward;
+        animation-fill-mode: forward;
+        -webkit-animation-duration: 0.6s;
+        animation-duration: 0.6s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.textarea {
+    &[rows] {
+        height: 3.5rem;
+        min-height: auto;
+    }
+
+    &:not([rows]) {
+        height: auto;
+    }
+}
+
+a {
+    color: $primary;
+}
+
+.navbar-burger {
+    width: inherit;
+    height: inherit;
+}
+
+.tag:not(body) {
+    border-radius: 20px;
+}
+
+.main {
+    max-width: 960px;
+    padding: 0px 10px;
+}
+
+.section {
+    padding-top: 0px;
+}
+
+.header {
+    top: 0;
+    width: 100%;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 40px 1px #e8e8e8;
+    box-shadow: 0 5px 40px 1px #e8e8e8;
+}
+
+.card {
+    border-radius: 4px;
+    box-shadow: 0 5px 40px 1px #e8e8e8;
+}
+
+.content {
+    margin-top: 100px;
+}
+
+.x {
+    text-decoration: none;
+    color: inherit;
+}
+
+.is-heading {
+    margin: 40px 0;
+}
+
+.navbar-link[data-v-4295d220]:hover {
+    background-color: white;
+    color: $primary;
+}
+
+.navbar-link[data-v-4295d220]:not(.is-arrowless)::after {
+    border-color: $primary;
+}
+
+@keyframes shakeError {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(0.375rem);
+    }
+
+    30% {
+        transform: translateX(-0.375rem);
+    }
+
+    45% {
+        transform: translateX(0.375rem);
+    }
+
+    60% {
+        transform: translateX(-0.375rem);
+    }
+
+    75% {
+        transform: translateX(0.375rem);
+    }
+
+    90% {
+        transform: translateX(-0.375rem);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.progress-bar--container {
+    width: 100%;
+    height: 6px;
+    background-color: #4ade9b;
+    display: none;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.1s ease-out;
+    opacity: 1;
+}
+
+.progress-bar--container::after {
+    background-color: #2bad96;
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    transform-origin: left;
+}
+
+.progress-bar--container.visible {
+    display: block;
+    animation: progress-bar--container_fadeIn 0.2s ease-in;
+}
+
+.progress-bar--container.visible::after {
+    display: block;
+    animation: progress-bar_fill 2s linear;
+    animation-iteration-count: infinite;
+}
+
+.progress-bar--container.visible.fade {
+    opacity: 0;
+}
+
+@keyframes progress-bar_fill {
+    0% {
+        transform: scaleX(0) translateX(0);
+    }
+
+    1% {
+        transform: scaleX(0) translateX(0);
+    }
+
+    33% {
+        transform: scaleX(0.66) translateX(16.5%);
+    }
+
+    75% {
+        transform: scaleX(1.5) translateX(66%);
+    }
+
+    100% {
+        transform: scaleX(2) translateX(150%);
+    }
+}
+
+@keyframes progress-bar--container_fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.beta-bump {
+    margin-top: 20px;
+}
+
+#navbar {
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 40px 1px #e8e8e8;
+    padding-bottom: 20px;
+}
+
+a.navbar-item {
+    color: #71777e;
+
+    img {
+        max-height: inherit;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        background-color: inherit;
+        color: inherit;
+    }
+}
+
+.navbar-menu {
+    margin-left: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+#profileImage {
+    margin-left: 5px;
+    margin-right: 10px;
+
+    > img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.banner-image {
+    max-width: 500px;
+    height: 100%;
+    width: 100%;
+}
+
+#getStarted {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+}
+
+#bannerText {
+    padding-top: 20px;
+}
+
+#homeBottom {
+    padding-top: 50px;
+}
+
+#homeBottomBackground {
+    position: absolute;
+    left: 0;
+    right: -50%;
+    margin-left: -25%;
+    height: 100%;
+    max-width: 150%;
+    width: 150%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: #f9fafc;
+}
+
+#listDetails {
+    padding-top: 40px;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 50px 40px -40px #e8e8e8;
+    padding-bottom: 20px;
+}
+
+#description {
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+#vanityUrl {
+    font-size: 2.25em;
+    font-weight: 500;
+}
+
+#errorMessage {
+    height: 10px;
+    margin-top: 5px;
+}
+
+#publishButton {
+    margin-top: 1.2em;
+}
+
+#liveLink {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+#linkHeader {
+    margin-top: 30px;
+}
+
+#deleteButton {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 6px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.link-outer {
+    height: 130px;
+}
+
+// this class bumps the drag handle and delete button to the outer margin
+// it is only applied when a list is in edit mode
+.link-editable {
+    margin: 10px -40px auto -40px;
+}
+
+.link-wrapper {
+    transition: margin 400ms linear;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+.link {
+    width: 100%;
+    height: 110px;
+    cursor: pointer;
+    padding-left: 10px;
+
+    .textarea,
+    .input {
+        padding: 0px 4px 0px 4px;
+        line-height: auto;
+        height: auto;
+        min-height: auto;
+        border: none;
+        box-shadow: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+            box-shadow: inset 1px 0px 2px #20ae96;
+        }
+    }
+
+    .link-image {
+        padding-right: -14px;
+
+        &.link-image-little {
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    .link-details {
+        height: 110px;
+        margin-right: 10px;
+    }
+
+    .link-description {
+        font-size: 1em;
+        height: 40px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .link-url {
+        margin-left: 4px;
+        font-size: 12px;
+        border: none;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:disabled {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    .link-delete {
+        cursor: pointer;
+        margin-top: -20px;
+        margin-left: 20px;
+        transition: margin 400ms linear;
+    }
+
+    .link-overlay {
+        height: 110px;
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        margin-top: -110px;
+    }
+}
+
+.link-drag-handle {
+    cursor: move;
+}
+
+@media only screen and (max-width: 1090px) {
+    .link-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

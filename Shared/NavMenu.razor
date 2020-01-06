@@ -1,0 +1,42 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <img data-v-dfeeb200="" width="100" height="60" src="/img/logo-beta.svg" alt="Questions logo">
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="navbar-item px-3">
+            <NavLink class="navbar-item" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="navbar-item px-3">
+            <NavLink class="navbar-item" href="add">
+                <span class="oi oi-plus" aria-hidden="true"></span> New
+            </NavLink>
+        </li>
+        <li class="navbar-item px-3">
+            <NavLink class="navbar-item" href="about">
+                <span class="oi oi-question-mark" aria-hidden="true"></span> About
+            </NavLink>
+        </li>
+        @*<li class="navbar-item px-3">
+            <NavLink class="navbar-item" href="login">
+                <span class="oi oi-account-login" aria-hidden="true"></span> Login
+            </NavLink>
+        </li>*@
+    </ul>
+</div>
+
+@code {
+    bool collapseNavMenu = false;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : "";
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://127.0.0.1:8080/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "QuestionsClient": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "APP_FRONTEND": "",
+        "APP_BACKEND": "https://www.theQuestions.com",
+        "APP_FUNCTION_KEY": "SteUyT0o2YSt4JW8k2qZ5ShTBcQYQj1pxE8cO7oTrYI4ps92/53o9w=="
+      },
+      "applicationUrl": "http://localhost:8080/"
+    }
+  }
+}

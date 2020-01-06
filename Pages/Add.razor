@@ -1,0 +1,87 @@
+@page "/s/question"
+@using System.Collections.Generic
+@using System.Net.Http
+@using QuestionsClient.Models
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+
+    
+    <div id="listDetails" class="addbar flex is-horizontally-centered">
+            <div class="container main">
+                <div class="columns">
+                    <div class="column">
+                        <h3 class="has-text-primary is-size-3 has-text-weight-medium">
+                            <label class="control-label" for="vanityUrl">Question</label>
+                        </h3>
+                            
+                        <input type="text"
+                                id="vanitUrl"
+                                title="Optional: Enter a name for this list. The name will become the URL (i.e. my-list becomes theQuestions.com/my-list). If you leave this box blank, we'll generate a random name for you."
+                                class="input is-large has-tooltip"
+                                @bind="Question" />
+                    </div>
+                    
+                <div class="column is-narrow">
+                    <h3 class="has-text-primary is-size-3 has-text-weight-medium">
+                        <label class="control-label" for="vanityUrl">&nbsp;@status</label>
+                    </h3>
+                    <button class="button is-primary is-large has-text-white has-text-weight-bold" @onclick="AddResult">Submit</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    <div class="container main content">
+        <div id="linkHeader" class="columns is-mobile is-vcentered is-gapless">
+            <div class="column">
+                <h3 class="has-text-primary is-size-3 has-text-weight-medium">
+                    Answer
+                </h3>
+            </div>
+        </div>
+        <ListView Links=@Links OnRemove="Remove"/>
+    </div>
+
+@code {
+    private int updateVersion = 0;
+    private string Question = "";
+    private string SubmitData = "";
+    private string NewLink = "";
+    private List<QuestionResponse> AddedAnswers = new List<QuestionResponse>();
+
+    private string status = " ";
+    private bool isError = false;
+
+    async Task KeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await AddResult();
+        }
+    }
+
+    async Task AddResult()
+    {
+        RequestClient.Initialize(Http);
+        var answer = await Http.GetStringAsync($"api/Answer?question={Question}");
+
+        var result = new QuestionResponse()
+        {
+            AnswerText = answer,
+        };
+        AddedAnswers.Insert(0, result);
+    }
+
+
+    void Remove(Guid refGuid) {
+        var itemToRemove = AddedAnswers.Single(l => l.Ref == refGuid);
+        AddedAnswers.Remove(itemToRemove);
+    }
+
+    private IEnumerable<QuestionResponse> Links
+    {
+        get
+        {
+            return AddedAnswers;
+        }
+    }
+}
