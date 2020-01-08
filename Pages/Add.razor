@@ -62,7 +62,7 @@
     async Task AddResult()
     {
         RequestClient.Initialize(Http);
-        var answer = await Http.GetStringAsync($"api/Answer?question={Question}");
+        var answer = await Http.GetStringAsync($"api/Question?question={Question}");
 
         var result = new QuestionResponse()
         {
