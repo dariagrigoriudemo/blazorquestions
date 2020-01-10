@@ -9,8 +9,7 @@ namespace QuestionsClient.Models
     public static class RequestClient
     {
         private static bool isInitialized = false;
-        private static bool use_local = true;
-        private static bool use_test_function = true;
+        private static bool use_local = false;
 
         public static void Initialize(HttpClient Http)
         {
@@ -19,15 +18,13 @@ namespace QuestionsClient.Models
 
                 if (use_local)
                 {
-                    // local
+                    // Local
                     Http.BaseAddress = new Uri("http://localhost:7071");
                 }
                 else
                 {
-                    // remote prod
-                    // Http.BaseAddress = new Uri("https://www.theQuestions.com/api");
-                    // remote test deployment
-                    Http.BaseAddress = new Uri("https://Questionsapi.azure-api.net/");
+                    // Azure prod
+                    Http.BaseAddress = new Uri("https://questionfunctions.azurewebsites.net");
                 }
                 isInitialized = true;
             }

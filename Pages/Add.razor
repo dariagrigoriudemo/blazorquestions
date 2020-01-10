@@ -38,7 +38,7 @@
                 </h3>
             </div>
         </div>
-        <ListView Links=@Links OnRemove="Remove"/>
+        <ListView Responses=@ResponsesList OnRemove="Remove"/>
     </div>
 
 @code {
@@ -62,13 +62,13 @@
     async Task AddResult()
     {
         RequestClient.Initialize(Http);
-        var answer = await Http.GetStringAsync($"api/Question?question={Question}");
+        var answer = await Http.GetJsonAsync<QuestionResponse>($"api/Question?question={Question}");
 
-        var result = new QuestionResponse()
-        {
-            AnswerText = answer,
-        };
-        AddedAnswers.Insert(0, result);
+        var singleResponse = true;
+        if (singleResponse) {
+            AddedAnswers.Clear();
+        }
+        AddedAnswers.Insert(0, answer);
     }
 
 
@@ -77,7 +77,7 @@
         AddedAnswers.Remove(itemToRemove);
     }
 
-    private IEnumerable<QuestionResponse> Links
+    private IEnumerable<QuestionResponse> ResponsesList
     {
         get
         {

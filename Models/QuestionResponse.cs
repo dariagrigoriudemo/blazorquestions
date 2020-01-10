@@ -7,7 +7,9 @@ namespace QuestionsClient.Models
 {
     public class QuestionResponse
     {
-        public string AnswerText { get; set; }
+        public string Result { get; set; }
+
+        public int Id { get; set; }
 
         public Guid Ref { get; } = Guid.NewGuid();
     }
