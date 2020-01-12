@@ -1,41 +1,43 @@
 ﻿@page "/"
 
 <div class="has-background-white">
-    <div class="container">
-        <div class="section">
-            <div class="columns is-mobile is-vcentered is-gapless">
-                <div class="column">
+    <div class="container-main">
+        <div class="columns is-mobile is-vcentered is-gapless">
+            <div class="column" />
+            <div class="column">
+                <div class="inner-centered-div" style="text-align:center;">
                     <img width="100"
                          height="60"
                          src="/img/blazor.png"
-                         alt="Questions logo" />
+                         alt="Questions logo"
+                         class="inner-centered-div" />
 
-                    <span style="color: #8867C8;">
-                        <i class="fas fa-heart fa-3x"></i>
+                    <span style="color: #8867C8;" class="inner-centered-div">
+                        <i class="fas fa-heart fa-2x"></i>
                     </span>
                     <img width="100"
                          height="60"
                          src="/img/Function.svg"
-                         alt="Azure Functions" />
-
+                         alt="Azure Functions" class="inner-centered-div" />
                 </div>
             </div>
-            <div class="columns is-mobile is-vcentered is-gapless">
-                <div class="column">
-                    <div id="bannerText">
-                        <h1 class="is-size-3 has-text-weight-medium">
-                            <span class="has-text-primary">Blazor and serverless</span> Q&A game!
-                        </h1>
-                        <br />
-                        <p>
-                            Ask questions about Blazor WebAssembly and serverless technologies like Azure Functions and enjoy the answers.
-                        </p>
-                    </div>
+            <div class="column" />
+        </div>
+        <div class="columns is-mobile is-vcentered is-gapless">
+            <div class="column" />
+            <div class="column">
+                <div id="bannerText inner-centered-div" style="text-align:center;">
+                    <h1 class="is-size-4 has-text-weight-medium">
+                        <span class="has-text-primary">Blazor and serverless</span> Q&A game!
+                    </h1>
+                    <br />
                 </div>
             </div>
+            <div class="column" />
         </div>
     </div>
 </div>
+
 
 @code {
 

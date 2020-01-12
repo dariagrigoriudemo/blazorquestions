@@ -3,45 +3,47 @@
 <div>
 @foreach (var response in Responses)
 {
-    <div class="link-outer">
-        <div class="link-wrapper link-editable">
-            <div class="columns is-vcentered is-mobile">
-                <div class="column is-narrow">
-                    <span class="icon is-medium has-text-grey link-drag-handle">
-                        <i class="fas fa-lg fa-grip-vertical"></i>
-                    </span>
-                </div>
+    <div class="">
+        <div class="">
+            <div class="is-vcentered is-mobile">
+                <h3 class="has-text-primary is-size-3 has-text-weight-medium">
+                    Answer
+                </h3>
+                @*<div class="column is-narrow">
+            <span class="icon is-medium has-text-grey link-drag-handle">
+                <i class="fas fa-lg fa-grip-vertical"></i>
+            </span>
+        </div>*@
                 <div class="card link">
                     <div class="column">
                         <div class="columns is-vcentered">
                             <div class="column link-details">
                                 <div class="columns is-mobile is-multiline is-gapless">
                                     <div class="column">
-                                        <textarea 
-                                               :placeholder="editable ? 'Enter a title' : ''"
-                                               class="has-text-weight-bold link-title input has-text-weight-medium"
-                                               @bind="@response.Result"
-                                               style="resize: none;overflow-y: scroll;"
-                                               v-blur-on-enter-key />
+                                        <textarea :placeholder="editable ? 'Enter a title' : ''"
+                                                  class="is-size-4 has-text-weight-bold link-title input has-text-weight-medium"
+                                                  @bind="@response.Result"
+                                                  style="resize: none;overflow-y: scroll;"
+                                                  v-blur-on-enter-key />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column is-narrow">
-                    <div class="columns is-vcentered">
-                        <div class="column">
-                            <a class="has-text-bold link-delete has-text-grey"
-                               @onclick="@(()=> Remove(response.Ref))">
-                                <span class="icon is-medium">
-                                    <i class="fas fa-lg fa-times"></i>
-                                </span>
+                @*<div class="column is-narrow">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <a class="has-text-bold link-delete has-text-grey"
+                       @onclick="@(()=> Remove(response.Ref))">
+                        <span class="icon is-medium">
+                            <i class="fas fa-lg fa-times"></i>
+                        </span>
 
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
+            </div>
+        </div>*@
             </div>
         </div>
     </div>
